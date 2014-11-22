@@ -1,7 +1,6 @@
 var npg = require('../core/npg');
 
 exports.index = function (req, res) {
-  console.log("EMURATED.");
   res.render('npg', {pageid: 'npg', headtitle: "NPG v0.5", originalkey: "", md5res: "", b64res: ""});
 };
 

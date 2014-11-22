@@ -7,12 +7,12 @@ var favicon = require('serve-favicon');
 var bodyParser = require('body-parser');
 
 var app = express();
-app.use(morgan('dev')); // log等级
-app.set('views', './views'); // 设定模板位置
+app.use(morgan('dev'));
+app.set('views', './views');
 app.set('view engine', 'jade');
-app.engine('jade', require('jade').__express); // 设定渲染引擎
-app.use(express.static(path.join(__dirname, 'public'))); // 静态内容
-app.use(favicon(path.join(__dirname, 'public', 'img', 'favicon.ico'))); // favicon
+app.engine('jade', require('jade').__express);
+app.use(express.static(path.join(__dirname, 'public')));
+app.use(favicon(path.join(__dirname, 'public', 'img', 'favicon.ico')));
 app.use(bodyParser.json() );       // to support JSON-encoded bodies
 app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
   extended: true
