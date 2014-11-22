@@ -16,6 +16,7 @@
     "utility": "^1.2.0"
   },
   "devDependencies": {
+    "coveralls" : "*",
     "mocha": "^2.0.1",
     "should": "^4.0.4",
     "istanbul": "^0.3.1",
