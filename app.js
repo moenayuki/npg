@@ -20,12 +20,9 @@ app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
 
 app.get('/', routes.index);
 app.post('/plain', routes.plain);
-app.get('/test', function (req, res) {
-  res.send("TEST!!!");
-});
-
-module.exports = app;
 
 app.listen(3000, function () {
   console.log("TARGET CAPTURED ON #3000 ....");
 });
+
+module.exports = app;
