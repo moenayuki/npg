@@ -1,14 +1,12 @@
 #Nayuki's Password Generator
 
-> UNFINISHED!!
-
 [![Build Status](https://travis-ci.org/moenayuki/npg.svg)](https://travis-ci.org/moenayuki/npg)
 [![Coverage Status](https://coveralls.io/repos/moenayuki/npg/badge.png)](https://coveralls.io/r/moenayuki/npg)
 
 A very-very-simple passphrase generator c/w a very-very-simple web front-end.
 
 
-###Run
+##Run
 
 ```bash
 git clone https://github.com/moenayuki/npg.git
@@ -17,14 +15,19 @@ npm install --production
 npm start
 ```
 
-###Test
+##Test
 
 ```bash
 npm install
 make test
 ```
 
-###License
+##TOOOs
+
+- Provide more stronger encrypt methods.
+- Add a `npg_config.json` as a simple customization.
+
+##License
 
 MIT
 
