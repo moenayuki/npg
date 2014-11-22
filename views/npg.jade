@@ -1,0 +1,49 @@
+extends inc/layout
+block content
+  .container
+    .row
+      .container
+        .input-group
+          input#target.form-control(type="text", placeholder="Nayuki's PassGen v0.7", value= originalkey)
+          span.input-group-btn
+            button#generateBtn.btn.btn-default(type="submit") Generate
+            button#keysaveBtn.btn.btn-default.btn-info(data-toggle="modal", data-target="#keysaveModal") Key
+    p &nbsp;
+    .row
+      .container
+        .input-group
+          span.input-group-addon md5
+          input#md5.form-control(type="text", placeholder="MD5", value= md5res)
+          span.input-group-addon base64
+          input#b64.form-control(type="text", placeholder="base64", value= b64res)
+    p %nbsp;
+
+    .modal.fade#keysaveModal(tabindex="-1", role="dialog", aria-labelledby="Label" aria-hidden="true")
+      .modal-dialog
+        .modal-content
+          .modal-header
+            button.close(type="button", data-dismiss="modal")
+              span(aria-hidden="true") &times;
+              span.sr-only Close
+            h4.modal-title#Label Set your keys
+          .modal-body
+            div.input-group
+              span.input-group-addon Key1
+              input#key1.form-control(type="text", placeholder="Key1", value= key1)
+            p
+            div.input-group
+              span.input-group-addon Key2
+              input#key2.form-control(type="text", placeholder="Key2", value= key2)
+            p
+            p.text-info Keys will be saved in your browser for 5 days.
+          .modal-footer
+            #savedText.text-success.collapse.text-left Saved.
+            #deletedText.text-danger.collapse.text-left Deleted.
+            button.btn.btn-default(type="button", data-dismiss="modal") Close
+            button#deleteBtn.btn.btn-danger(type="button") Delete
+            button#saveBtn.btn.btn-primary(type="button") Save
+
+
+    script(src = "/js/jquery-cookie.js")
+    script(src = "/js/npg.js")
+
