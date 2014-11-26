@@ -1,22 +1,21 @@
 extends inc/layout
 block content
   .container
+    p
     .row
-      .container
-        .input-group
-          input#target.form-control(type="text", placeholder="Nayuki's PassGen v0.7", value= originalkey)
-          span.input-group-btn
-            button#generateBtn.btn.btn-default(type="submit") Generate
-            - if(!isKeysFixed)
-              button#keysaveBtn.btn.btn-default.btn-info(data-toggle="modal", data-target="#keysaveModal") Keys
+      .input-group
+        input#target.form-control(type="text", placeholder="Nayuki's PassGen v0.7", value= originalkey)
+        span.input-group-btn
+          button#generateBtn.btn.btn-default(type="submit") Generate
+          - if(!isKeysFixed)
+            button#keysaveBtn.btn.btn-default.btn-info(data-toggle="modal", data-target="#keysaveModal") Keys
     p &nbsp;
     .row
-      .container
-        .input-group
-          span.input-group-addon hex
-          input#md5.form-control(type="text", placeholder="hex", value= md5res)
-          span.input-group-addon base64
-          input#b64.form-control(type="text", placeholder="base64", value= b64res)
+      .input-group
+        span.input-group-addon hex
+        input#md5.form-control(type="text", placeholder="hex", value= md5res)
+        span.input-group-addon base64
+        input#b64.form-control(type="text", placeholder="base64", value= b64res)
     p &nbsp;
 
     .modal.fade#keysaveModal(tabindex="-1", role="dialog", aria-labelledby="Label" aria-hidden="true")
