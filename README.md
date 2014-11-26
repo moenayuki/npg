@@ -22,10 +22,11 @@ npm install
 make test
 ```
 
-##TOOOs
+##TODOs
 
-- Provide more stronger encrypt methods.
+- Stronger encrypt methods.
 - Add a `npg_config.json` as a simple customization.
+- A mobile version which can be offline.
 
 ##License
 
