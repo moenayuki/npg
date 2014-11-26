@@ -1,9 +1,8 @@
-function isKeysNotExist() {
-  return !($.cookie().key1 && $.cookie().key2);
-}
+var isKeysFixed = $("#keysaveBtn").get().length;
+var isCookieKeysExist = ($.cookie().key1 && $.cookie().key2);
 
 $(document).ready(function () {
-  if (isKeysNotExist()){
+  if (!(isCookieKeysExist || isKeysFixed)) {
     $("#target").attr("placeholder", "SET YOUR KEYS FIRST!!");
   }
   var key1 = $.cookie('key1');
@@ -15,14 +14,14 @@ $(document).ready(function () {
 });
 
 $("#generateBtn").click(function () {
-  if (isKeysNotExist()){
+  if (!(isCookieKeysExist || isKeysFixed)) {
     alert("You should set the keys first.");
     return;
   }
   var key1 = $.cookie().key1;
   var key2 = $.cookie().key2;
   $.ajax({
-    url: "/npg/plain",
+    url: "/plain",
     type: "POST",
     data: {target: $("#target").val(), key1: key1, key2: key2},
     dataType: "json",
@@ -37,10 +36,10 @@ function hideModal() {
 }
 
 $("#saveBtn").click(function () {
-  $.cookie("key1", $("#key1").val(),{expires: 5, path: '/npg'});
-  $.cookie("key2", $("#key2").val(),{expires: 5, path: '/npg'});
+  $.cookie("key1", $("#key1").val(),{expires: 5, path: '/'});
+  $.cookie("key2", $("#key2").val(),{expires: 5, path: '/'});
   $("#savedText").show("slow").delay(1000).hide(400, hideModal);
-  $("#target").attr("placeholder", "Nayuki's PassGen v0.5");
+  $("#target").attr("placeholder", "Nayuki's PassGen v0.7");
 });
 
 $("#deleteBtn").click(function () {

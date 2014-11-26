@@ -1,7 +1,9 @@
 {
   "name": "Nayuki-PG",
   "description": "Nayuki's Password Generator",
-  "repository": "https://github.com/moenayuki/npg",
+  "repository": "https://github.com/moenayuki/npg.git",
+  "homepage": "https://github.com/moenayuki/npg",
+  "bugs": "https://github.com/moenayuki/npg/issues",
   "version": "0.7.0",
   "scripts": {
     "start": "node app.js",
@@ -13,7 +15,7 @@
     "jade": "^1.7.0",
     "morgan": "^1.3.2",
     "serve-favicon": "^2.1.6",
-    "utility": "^1.2.0"
+    "crypto-js": "^3.1.2"
   },
   "devDependencies": {
     "coveralls" : "*",

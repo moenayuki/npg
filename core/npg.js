@@ -1,8 +1,8 @@
-var utility = require('utility');
+var md5 = require("crypto-js/md5");
 
 function md5Cal (phrase, key1, key2) {
-  var result = utility.md5(phrase + key1).slice(0,8);
-  return utility.md5(result + key2);
+  var result = md5(phrase + key1).toString().slice(0,8);
+  return md5(result + key2).toString();
 }
 
 function b64Cal (phrase) {

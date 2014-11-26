@@ -24,9 +24,9 @@ make test
 
 ##TODOs
 
-- Stronger encrypt methods.
-- Add a `npg_config.json` as a simple customization.
-- A mobile version which can be offline.
+- [ ] Stronger encrypt methods.
+- [X] Add a `npg_config.json` as a simple customization.
+- [ ] A mobile version which can be offline.
 
 ##License
 

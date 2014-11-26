@@ -5,6 +5,7 @@ var jade = require('jade');
 var path = require('path');
 var favicon = require('serve-favicon');
 var bodyParser = require('body-parser');
+var config = require('./config_npg');
 
 var app = express();
 app.use(morgan('dev'));
@@ -18,7 +19,9 @@ app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
   extended: true
 }));
 
-app.get('/', routes.index);
+if(config.useWebFront)
+  app.get('/', routes.index);
+
 app.post('/plain', routes.plain);
 
 app.listen(3000, function () {
